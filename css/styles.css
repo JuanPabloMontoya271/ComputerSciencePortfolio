@@ -669,6 +669,7 @@ font-size: 18px;
     width: 30%;
   }
   .section-header{
+    margin-top:8vh ;
     text-align: center;
   }
   .about-me{
