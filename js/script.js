@@ -18,7 +18,7 @@ sections.forEach((section) => {
 
 document.addEventListener('DOMContentLoaded',function(event){
 	// array with texts to type in typewriter
-	var dataText = ["Software Engineering Intern", "CEO at BSN Technologies", "Technology Consultant" ];
+	var dataText = ["Software Engineering Student", "CEO at BSN Technologies", "Technology Consultant" ];
 	
 	// type one text in the typwriter
 	// keeps calling itself until the text is finished
@@ -58,3 +58,17 @@ document.addEventListener('DOMContentLoaded',function(event){
 	// start the text animation
 	StartTextAnimation(0);
   });
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("my-photo-slider");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
