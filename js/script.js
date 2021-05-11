@@ -148,7 +148,7 @@ function project(title, description, img, link){
 	</div>
 `
 }	
-var projects = [{title: "Medical Imaging Classification",link:"MedicalImageClassification.html", description: "Medical Imaging Classification with Deep Learning", img:"https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80"},
+var projects = [{title: "Medical Imaging Classification",link:"MedicalImageClassification.html", description: "Medical Imaging Classification with Deep Learning", img:"https://www.health.harvard.edu/media/content/images/cr/ddca3f92-4b8e-4672-bb6b-f3594ad4e304.jpg"},
 {title: "Medical Imaging Segmentation", description: "Medical Imaging Segmentation in Computer Tomographies using Deep Learning", img:"https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80"},
 {title: "BSN Medical Vision", description: "Web Platform that improves medical imaging diagnosis", img:"https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80"},
 {title: "Crowd Analysis", description: "Implementation of Deep Learning Models to provide solutions based on crowd analysis in realtime video feed", img:"https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80"},
