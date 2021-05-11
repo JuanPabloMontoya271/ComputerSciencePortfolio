@@ -12,7 +12,7 @@
 		<nav class="navbar">
 
 			<div class="logo">
-				<a href="./#home">juan</a>
+				<a href="./#home">Juan Pablo Montoya</a>
 			</div>
 
 			<div class="main-nav" id="main-nav">
@@ -35,54 +35,93 @@
 
 		<div class="container-fluid">
 			<div class="container-xl">
-				<div class="container-md">
+				<div id= "project-review" class="container-md">
 
 					<div class="project-cover">
-						<h1 class="project-title h-name">Armis Project Title</h1>
-						<p class="project-sub-title h-title">Eliminate the loT secutity Bind spot</p>
-						<img src="https://unsplash.com/blog/content/images/2021/03/boxed-water-blog-2.jpg" alt="project image" class="proj-img">
+						<h1 id="Title" class="project-title h-name">Armis Project Title</h1>
+						<p id= "Description" class="project-sub-title h-title">Eliminate the loT secutity Bind spot</p>
+						<img id="MainPicture" src="https://unsplash.com/blog/content/images/2021/03/boxed-water-blog-2.jpg" alt="project image" class="proj-img">
 					</div>
 
-					<div class="proj-disc one animate">
-						<div class="text">
-							<h2 class="disc-title h-title">See Every Device. Every Connection</h2>
-							<p class="disc-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quis quibusdam ab voluptate, illo libero voluptatem labore autem ipsa fugit sequi doloribus, asperiores culpa laboriosam.</p>
-						</div>
-						<div class="p-img">
-							<img src="https://unsplash.com/blog/content/images/2021/03/boxed-water-blog-2.jpg" alt="image one">
-						</div>
-					</div>
+									
 
-					<div class="proj-disc two animate">
-						<div class="p-img">
-							<img src="https://unsplash.com/blog/content/images/2021/03/boxed-water-blog-2.jpg" alt="image two">
+				</div>
+			</div>
+		</div>
+
+	</main>
+	<script>
+		const sections = document.querySelectorAll('.animate');
+		observer = new IntersectionObserver((entries) => {
+
+			entries.forEach((entry) => {
+		
+				if(entry.intersectionRatio > 0) {
+					entry.target.style.animation = `anim1 2s forwards ease-out`;
+				}
+				else{
+					entry.target.style.animation = 'none';
+				}
+			});
+	
+});
+
+sections.forEach((section) => {
+
+	observer.observe(section);
+})
+
+var data = {
+	title: "Titulo",
+	description: "Description",
+	mainImage:"https://unsplash.com/blog/content/images/2021/03/boxed-water-blog-2.jpg",
+	content: [{title:"titulo", content: "loremipsum", img: "https://unsplash.com/blog/content/images/2021/03/boxed-water-blog-2.jpg"},{title:"titulo", content: "loremipsum", img: "https://unsplash.com/blog/content/images/2021/03/boxed-water-blog-2.jpg"},{title:"titulo", content: "loremipsum", img: "https://unsplash.com/blog/content/images/2021/03/boxed-water-blog-2.jpg"}]
+	}
+document.getElementById("Title").innerText = data.title
+document.getElementById("Description").innerText = data.description
+document.getElementById("MainPicture").src = data.mainImage
+var container = document.getElementById("project-review")
+function left (values){
+	return `<div class="p-img">
+							<img src=${values.img} alt="image two">
 						</div>
 						<div class="text after-img">
-							<h2 class="disc-title h-title">See Every Device. Every Connection</h2>
-							<p class="disc-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quis quibusdam ab voluptate, illo libero voluptatem labore autem ipsa fugit sequi doloribus, asperiores culpa laboriosam.</p>
+							<h2 class="disc-title h-title">${values.title}</h2>
+							<p class="disc-para">${values.content}</p>
 						</div>
-					</div>
-
-					<div class="proj-disc three animate">
-						<div class="text">
-							<h2 class="disc-title h-title">See Every Device. Every Connection</h2>
-							<p class="disc-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quis quibusdam ab voluptate, illo libero voluptatem labore autem ipsa fugit sequi doloribus, asperiores culpa laboriosam.</p>
-						</div>
-						<div class="p-img">
-							<img src="https://unsplash.com/blog/content/images/2021/03/boxed-water-blog-2.jpg" alt="image three">
-						</div>
-					</div>
-
-					<div class="proj-disc four animate">
-						<div class="p-img">
-							<img src="https://unsplash.com/blog/content/images/2021/03/boxed-water-blog-2.jpg" alt="image four">
-						</div>
+					` 
+}
+function right(values){
+	return `
 						<div class="text after-img">
-							<h2 class="disc-title h-title">See Every Device. Every Connection</h2>
-							<p class="disc-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quis quibusdam ab voluptate, illo libero voluptatem labore autem ipsa fugit sequi doloribus, asperiores culpa laboriosam.</p>
+							<h2 class="disc-title h-title">${values.title}</h2>
+							<p class="disc-para">${values.content}</p>
 						</div>
-					</div>
-					<div class="section contact" id="contact">
+						<div class="p-img">
+							<img src=${values.img} alt="image two">
+						</div>
+						
+			`
+}
+
+for (i in data.content){
+	// data.content[i]
+	var child =document.createElement("div")
+	child.className="proj-disc  animate"
+	if (i%2){
+	child.innerHTML= (left(data.content[i]))
+	}
+	else{
+		child.innerHTML= (right(data.content[i]))
+	}
+	container.appendChild(child)
+	
+
+}
+var contact = document.createElement("div")
+contact.className = "section contact"
+contact.id = "contact"
+contact.innerHTML = `	
 						<div class="contact-info animate">
 							<h3 class="service-title contact-title">Let's Connect</h3>
 							<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias aliquam vitae minus doloremque illum harum.</p>
@@ -119,13 +158,8 @@
 								<input type="submit" value="Send" id="input-submit">
 							  </form>
 						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
-
-	</main>
-	<script src="./js/script.js"></script>
+					`
+container.appendChild(contact)
+</script>
 </body>
 </html>
