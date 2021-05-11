@@ -129,12 +129,12 @@ return  `<div class="timeline-item">
 	</div>
 	`
 }
-function project(title, description, img){
+function project(title, description, img, link){
 	return `
 	<div class="proj-img">
 		<img src=${img} alt="work-one" class="project-img">
 		<div class="proj-more">
-			<a href="./project.html" class="show-button">Show More</a>
+			<a href=${link||"project.html"} class="show-button">Show More</a>
 		</div>
 	</div>
 	<div class="pro-disc">
@@ -148,7 +148,7 @@ function project(title, description, img){
 	</div>
 `
 }	
-var projects = [{title: "Medical Imaging Classification", description: "Medical Imaging Classification with Deep Learning", img:"https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80"},
+var projects = [{title: "Medical Imaging Classification",link:"MedicalImageClassification.html", description: "Medical Imaging Classification with Deep Learning", img:"https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80"},
 {title: "Medical Imaging Segmentation", description: "Medical Imaging Segmentation in Computer Tomographies using Deep Learning", img:"https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80"},
 {title: "BSN Medical Vision", description: "Web Platform that improves medical imaging diagnosis", img:"https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80"},
 {title: "Crowd Analysis", description: "Implementation of Deep Learning Models to provide solutions based on crowd analysis in realtime video feed", img:"https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2700&q=80"},
@@ -160,21 +160,47 @@ projects.map((val, key)=>{
 	var child = document.createElement("div")
 	child.className="work-example"
 		
-		child.innerHTML = project(val.title, val.description, val.img)
+		child.innerHTML = project(val.title, val.description, val.img, val.link)
 				
 	
 	document.getElementById("Projects").append(child)
 
 })
-var experiences = [{title:"Titulo", content: "Content", date: "2012-2013"},{title:"Titulo", content: "Content", date: "2012-2013"}]
+var experiences = [{title:"Software Engineering Intern at Cisco Systems", content: "Software Engineering Intern at Cisco Systems in collaboration with the development team at Mindmeld AI", date: "Summer 2021"},{title:"ML/AI Consultant at Proaqct", content: "Machine Learning and AI implementation for a medical startup which develops software to help hospital to monitor the radiation dose in patients recieving medical imaging studies.", date: "April 2021 - to the date"},
+ {title: "Research and Development Intern at Strategix4", 
+ 	content: "Developed and Implemented scalable Computer Vision algorithms for multi camera crowd analysis, including face recognition, body part detection, and custom object tracking. Applied OCR and Super resolution algorithms for text extraction. I used: Python with Tensorflow, open CV, pytesseract, and Keras",
+	  date: "June 2020 - May 2021"},
+	    {title: "Data analysis Consultancy for Flor Ayala (local Congresswoman)",
+		 content:"Used Machine Learning in historical electoral data for trend analysis. Used Scikit learn, pandas, matplotlib and seaborn.",
+		  date: "August 2017 - June 2018 and March 2021 - May 2021" },
+		{title: "Founder and CEO  at BSN Technologies",
+			content: `Founded an AI startup that developed a Healthcare Platform that provides
+			physicians AI based tools for medical imaging analysis. Used ReactJS and AWS Cloud Services for the platform, Pytorch, and Tensorflow.
+			`, 
+			date: "October 2019 to present"},
+			{title: "Winner of the Entrepreneurship Scholarship Award 2020 at Tecnológico de Monterrey", content: `Given to the best 30 out  of 1200 tech startups founded by students before College. Received the award for my startup BSN Technologies, which develops 
+			AI to improve medical diagnosis.
+			`, date: ""}
+			,{title: `Second Place at National Entrepreneurship Competition Inc Prototype (2020)
+			`, content: "Awarded Second place at a national competition with project BSN Medical Vision", date: "November 2020"}
+			,{title:"Think Award (3rd Place) at National First Tech Challenge (2020)", content: "", date: "January 2020"}
+			,{title:`Inspire Award (1st place) Regional First Tech Challenge (2019)`, content: "", date: "November 2019"}
+			,{title: `Participant in Collision Alpha:`,content:"I presented my startup at a massive Tech conference called Collision Conference in Toronto, Canada." ,date:"May 2019"}
+			,{title: `Participant in National Science Fair (2018):
+			Presented a smart home appliance project in La Paz, Baja California Sur.
+			`, content: "",date: "December 2017"}
+
+		]
 experiences.map((val, key)=>{
 	var child = document.createElement("div")
-	if (!key%2==0){
+	
+	if ((key%2)){
 		
 		child.innerHTML = left(val.title, val.content, val.date)
 				
 	}
 	else{
+		
 		child.innerHTML = right(val.title, val.content, val.date)
 	}
 	document.getElementById("timeline").append(child)
