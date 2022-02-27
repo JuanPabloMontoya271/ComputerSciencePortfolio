@@ -1,3 +1,19 @@
+const age = document.getElementById("age");
+
+function diff_years(dt2, dt1) 
+ {
+
+  var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+  diff /= (60 * 60 * 24);
+  return Math.abs(Math.round(diff/365.25));
+ 
+ }
+
+dt1 = new Date(2002, 9, 27);
+dt2 = new Date();
+const age_calculation = diff_years(dt2, dt1);
+age.innerText = age_calculation;
+
 const sections = document.querySelectorAll('.animate');
 observer = new IntersectionObserver((entries) => {
 
