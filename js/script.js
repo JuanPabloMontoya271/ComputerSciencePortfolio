@@ -165,7 +165,7 @@ function project(title, description, img, link){
 `
 }	
 var projects = [{title: "Medical Imaging Classification",link:"https://colab.research.google.com/drive/1XPFyLANMHCv75p_iK2nk2zbhqPU7p2bZ?usp=sharing", description: "Medical Imaging Classification with Deep Learning", img:"https://www.juanpablomontoyae.com/images/8.jpg"},
-{title: "Medical Imaging Segmentation", link: "https://colab.research.google.com/drive/1rXnFCgNRwHdK3ATK8P4aYERxDm50_L49?usp=sharing",description: "Medical Imaging Segmentation in CT Scans using Deep Learning", img:"./images/10.jpg"},
+{title: "Medical Imaging Segmentation", link: "https://colab.research.google.com/drive/1IQX-ClU3dcI-RDZPcAfysYTfvHM2jnem?usp=sharing",description: "Medical Imaging Segmentation in CT Scans using Deep Learning", img:"./images/10.jpg"},
 {title: "BSN Medical Vision Platform",link:"https://www.bsnmedicalvision.com/Patients2/1a3606f4-a7a4-4e52-b14e-423d6fea3512/admin", description: "Web Platform that improves medical imaging diagnosis", img:"./images/11.jpeg"},
 {title: "Crowd Analysis", link:"https://github.com/JuanPabloMontoya271/Strategix4RealTimeDataClient", description: "Implementation of Deep Learning Models to provide solutions based on crowd analysis in realtime video feed", img:"./images/12.jpeg"},
 {title: "Multipurpose OCR",link: "https://colab.research.google.com/drive/11xZf5dgCmIc8L0uyB3CAGQb4THCpVBlm?usp=sharing", description: "Multipurpose OCR implementation and Edge detection using google cloud api", img:"./images/15.jpeg"},
