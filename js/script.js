@@ -34,7 +34,7 @@ sections.forEach((section) => {
 
 document.addEventListener('DOMContentLoaded',function(event){
 	// array with texts to type in typewriter
-	var dataText = ["Software Engineering Student", "CEO at BSN Technologies", "Technology Consultant" ];
+	var dataText = ["Software Engineer", "CEO at BSN Technologies", "Technology Consultant" ];
 	
 	// type one text in the typwriter
 	// keeps calling itself until the text is finished
